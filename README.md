@@ -24,6 +24,21 @@ steps:
 - run: yosys --version
 ```
 
+# Example
+
+```yaml
+name: CI
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: YosysHQ/setup-oss-cad-suite@v1
+      - run: yosys --version
+```
+
 # License
 
 The scripts and documentation in this project are released under the [ISC](COPYING)
