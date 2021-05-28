@@ -1,11 +1,10 @@
 {
   "name": "setup-oss-cad-suite",
   "version": "1.0.0",
-  "license": "MIT",
+  "license": "ISC",
   "private": true,
   "scripts": {
-    "build": "ncc build src/setup-oss-cad-suite.js",
-    "format": "prettier \"src/**/*.js\""
+    "build": "ncc build src/setup-oss-cad-suite.js"
   },
   "dependencies": {
     "@actions/core": "^1.0.0",

@@ -4,10 +4,10 @@ set -eo pipefail
 
 cd $RUNNER_TEMP
 
-wget -q https://github.com/YosysHQ/oss-cad-suite-build/releases/download/2021-05-28/oss-cad-suite-linux-x64-20210528.tgz
 mkdir -p .setup-oss-cad-suite
 pushd .setup-oss-cad-suite
+wget -q https://github.com/YosysHQ/oss-cad-suite-build/releases/download/2021-05-28/oss-cad-suite-linux-x64-20210528.tgz
 tar xfz oss-cad-suite-linux-x64-20210528.tgz
-popd
 rm oss-cad-suite-linux-x64-20210528.tgz
+popd
 echo "$(pwd)/.setup-oss-cad-suite/oss-cad-suite/bin" >> $GITHUB_PATH
