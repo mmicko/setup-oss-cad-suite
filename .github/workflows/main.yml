@@ -1,0 +1,11 @@
+name: CI
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: mmicko/setup-oss-cad-suite@v1
+      - name: Run a one-line script
+        run: yosys --version
