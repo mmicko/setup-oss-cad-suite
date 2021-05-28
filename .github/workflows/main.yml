@@ -6,8 +6,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: mmicko/setup-oss-cad-suite@v1
-        with:
-          osscadsuite-version: '2021-05-26'
+      - uses: YosysHQ/setup-oss-cad-suite@v1
       - name: Run a one-line script
         run: yosys --version
