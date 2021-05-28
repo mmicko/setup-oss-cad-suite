@@ -1,6 +1,6 @@
 # setup-oss-cad-suite
 
-This action sets up a OSS CAD Suite environment for use in actions by:
+This action sets up a [OSS CAD Suite](https://github.com/YosysHQ/oss-cad-suite-build) environment for use in actions by:
 
 - downloading a version of OSS CAD Suite by version (or latest by default) and adding to PATH
 
