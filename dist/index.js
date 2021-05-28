@@ -1769,7 +1769,7 @@ async function main() {
   await installOSSCADSuite()
   console.log(`##[endgroup]`)
 
-  process.env.PATH = `${process.env.RUNNER_TEMP}/.setup-oss-cad-suite/oss-cad-suite/bin:${process.env.PATH}`
+  process.env.GITHUB_PATH = `${process.env.RUNNER_TEMP}/.setup-oss-cad-suite/oss-cad-suite/bin:${process.env.GITHUB_PATH}`
 }
 
 function checkPlatform() {
