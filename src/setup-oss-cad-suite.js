@@ -8,7 +8,11 @@ main().catch(err => {
 
 async function installOSSCADSuite() {
   if (process.platform === 'linux') {
-    await exec(path.join(__dirname, 'install-oss-cad-suite'))
+    let version = core.getInput('osscadsuite-version')
+    if (version == null)
+      await exec(path.join(__dirname, 'install-oss-cad-suite'))
+    else 
+      await exec(path.join(__dirname, 'install-oss-cad-suite'), [version])
   }
 }
 
@@ -16,6 +20,7 @@ async function main() {
   checkPlatform()
 
   console.log(`##[group]Installing OSS CAD Suite`)
+
   await installOSSCADSuite()
   console.log(`##[endgroup]`)
 

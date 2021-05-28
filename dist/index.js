@@ -1753,7 +1753,11 @@ main().catch(err => {
 
 async function installOSSCADSuite() {
   if (process.platform === 'linux') {
-    await exec(__nccwpck_require__.ab + "install-oss-cad-suite")
+    let version = core.getInput('osscadsuite-version')
+    if (version == null)
+      await exec(__nccwpck_require__.ab + "install-oss-cad-suite")
+    else 
+      await exec(__nccwpck_require__.ab + "install-oss-cad-suite", [version])
   }
 }
 
@@ -1761,6 +1765,7 @@ async function main() {
   checkPlatform()
 
   console.log(`##[group]Installing OSS CAD Suite`)
+
   await installOSSCADSuite()
   console.log(`##[endgroup]`)
 

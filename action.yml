@@ -7,9 +7,6 @@ branding:
 inputs:
   osscadsuite-version:
     description: Version range or exact version of OSS CAD Suite to use
-outputs:
-  osscadsuite-version:
-    description: Exact version of OSS CAD Suite that was installed
 runs:
   using: node12
   main: dist/index.js

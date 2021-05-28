@@ -6,8 +6,13 @@ cd $RUNNER_TEMP
 
 mkdir -p .setup-oss-cad-suite
 pushd .setup-oss-cad-suite
-wget -q https://github.com/YosysHQ/oss-cad-suite-build/releases/download/2021-05-28/oss-cad-suite-linux-x64-20210528.tgz
-tar xfz oss-cad-suite-linux-x64-20210528.tgz
-rm oss-cad-suite-linux-x64-20210528.tgz
+if [ -n "$1" ]; then
+    build=`https://api.github.com/repos/YosysHQ/oss-cad-suite-build/releases/tags/$1 | grep browser_download_url | grep linux-x64 | cut -f4 -d\"`
+else
+    build=`curl -s https://api.github.com/repos/YosysHQ/oss-cad-suite-build/releases/latest | grep browser_download_url | grep linux-x64 | cut -f4 -d\"`
+fi
+wget -q $build -o build.tgz
+tar xfz build.tgz
+rm build.tgz
 popd
 echo "$(pwd)/.setup-oss-cad-suite/oss-cad-suite/bin" >> $GITHUB_PATH
