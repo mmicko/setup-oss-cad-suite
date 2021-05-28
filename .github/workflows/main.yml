@@ -7,5 +7,7 @@ jobs:
 
     steps:
       - uses: mmicko/setup-oss-cad-suite@v1
+        with:
+          osscadsuite-version: '2021-05-26'
       - name: Run a one-line script
         run: yosys --version
