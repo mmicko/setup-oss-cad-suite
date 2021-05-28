@@ -6,6 +6,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: python3 --version
       - uses: mmicko/setup-oss-cad-suite@v1
+        with:
+          python-override: true
       - name: Run a one-line script
         run: yosys --version
+      - run: python3 --version
