@@ -1,4 +1,4 @@
-name: Setup OSS CAD Suite
+name: Test OSS CAD Suite
 description: Set up a specific version of OSS CAD Suite and add the command-line tools to the PATH
 author: GitHub
 branding:
